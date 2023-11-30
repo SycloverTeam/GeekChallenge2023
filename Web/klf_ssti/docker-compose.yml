@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "7899:7899"
+    volumes:
+      - ~/www/hello/ssti/templates:/app/www/hello/ssti/templates
+      - ~/www/hello/ssti/static:/app/www/hello/ssti/static
