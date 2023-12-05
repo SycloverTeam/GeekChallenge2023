@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <title>{{ name }}'s Watchlist</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+      background-image: url("{{ url_for('static',filename='beijing.jpg12')}}");
+      background-size: cover;
+      background-repeat: no-repeat; /* 防止图片重复显示 */
+      background-attachment: fixed; /* 图片固定在视窗中 */
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #f44336;
+    color: yellow;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .movie {
+    width: 300px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    padding: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie img {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .movie-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>{{ name }}'s movies</h1>
+  </header>
+  <div class="container">
+    <div class="movie">
+      <img src="{{url_for('static',filename='1.webp')}}" >
+      <h2 class="movie-title"><a href="https://v.qq.com/x/cover/mzc00200cgo4wcc/r00454x3b5p.html">画江湖之不良人第六季</a></h2>
+      <p class="movie-description">监国独揽朝政，漠北大军来势汹汹，岐国独木难支，且看李星云如何带领不良人绝地反击！</p>
+    </div>
+    <div class="movie">
+      <img src="{{url_for('static',filename='2.avif')}}">
+        <h2 class="movie-title"><a href="https://v.qq.com/x/cover/mzc00200gw2ez0b/y00413sywan.html">画江湖之不良人第五季</a></h2>
+      <p class="movie-description">娆疆一行归来，李嗣源已称监国，借天子之名四处绞杀不良人，而身为天子的李星云也即将面临一个新的选择……</p>
+    </div>
+      <div class="movie">
+      <img src="{{url_for('static',filename='1.jpeg')}}">
+      <h2 class="movie-title"><a href="/flag">九幽玄天神功</a> </h2>
+      <p class="movie-description">我这有本医书你学不学?</p>
+    </div>
+          <div class="movie">
+      <img src="{{url_for('static',filename='2.webp')}}" ></a>
+      <h2 class="movie-title"><a href="https://www.bilibili.com/bangumi/play/ep733316/">凡人修仙传</a> </h2>
+      <p class="movie-description">看机智的凡人小子韩立如何稳健发展、步步为营，战魔道、夺至宝、驰骋星海、快意恩仇，成为纵横三界的强者。他日仙界重相逢，一声道友尽沧桑。</p>
+    </div>
+
+                <div class="movie">
+<img src="{{url_for('static',filename='4.avif')}}" alt="1692086589393.jpg" title="1692086589393.jpg" />
+      <h2 class="movie-title"><a href="https://v.qq.com/x/cover/mcv8hkc8zk8lnov/x0036x5qqsr.html">完美世界</a> </h2>
+      <p class="movie-description">他为修道而生，为应劫而至，他身化亿万血雨，洒落万古岁月，经历无数时空的熬炼，岁月长河的洗礼，他化万古，他化自在。看男主石昊如何一生极致辉煌，造就无尽传说。</p>
+    </div>
+
+  </div>
+</body>
+</html>

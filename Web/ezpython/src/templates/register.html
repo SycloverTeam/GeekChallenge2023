@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户注册</title>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <form id="registrationForm">
+        <label for="username">用户名:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">密码:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="注册">
+    </form>
+<script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var formData = {
+                username: username,
+                password: password
+            };
+
+            var formDataJSON = JSON.stringify(formData);
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: formDataJSON
+            }).then(response => {
+                // Handle the response from the server as needed
+                if (response.ok) {
+                    // Registration successful, redirect to login page
+                    window.location.href = '/login'; // Change to your actual login page URL
+                } else {
+                    console.log('Registration failed');
+                }
+            }).catch(error => {
+                console.error('Registration error:', error);
+            });
+        });
+    </script>
+</body>
+
+
+<!--KFMEU3CJJBWHMZCTIJ5GIWCKNREUO3BQJIZU2Z3DNVWG4YKIKFTWIRZYM5RW2VTOMFME4MC2LBEWOZCHNBYGG6KCGNMVQ2ZP-->
+
+</html>
